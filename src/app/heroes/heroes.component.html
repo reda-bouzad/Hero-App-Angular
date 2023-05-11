@@ -29,7 +29,19 @@
     </div>
 
     <div class="p-3 p-3 m-3 card col col-5">
-      {{selectedHero}}
+      <h4 class="text-danger text-center"> List of all classes: </h4>
+      <ul>
+        <li [class.selected]="classe === selectedClass" *ngFor="let classe of classes">
+          <div> id : {{classe.id }} &nbsp; </div>
+          <div> name : {{  classe.name}} </div>
+          <button
+            class="my-btn btn btn-primary"
+            type="button"
+            (click)="onSelectClasse(classe)"
+            >
+            detail</button>
+        </li>
+      </ul>
     </div>
 
     </div>
